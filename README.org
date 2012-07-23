@@ -1,0 +1,50 @@
+* cui-about-me.el
+
+** Overview
+
+   [[http://cui-about.me/gongo][cui-about.me]] を Emacs から覗くための emacs lisp です。
+
+** Requirement
+
+   - anything
+
+** Initialize
+
+   1. ~cui-about-me.el~ を load-path の通った場所に置く
+   2. ~(require 'cui-about-me)~
+
+** ユーザリストの表示
+
+   ~M-x cui-about:users~ を実行すると、ユーザ一覧が表示されます。
+
+   [[https://lh3.googleusercontent.com/-25CqvU3T2M4/UA1W8n9z3SI/AAAAAAAACPo/UwCajuBtNwY/s800/cui-about-me-list.jpg]]
+
+   情報を見たいユーザ上で ~Enter~ を押すと表示されます。
+
+   [[https://lh6.googleusercontent.com/-IW67O9kdfBQ/UA1W8vxeIrI/AAAAAAAACPo/jq8Vp4-v400/s800/cui-about-me-show.jpg]]
+
+   view-mode なので、デフォルトだと ~q~ を押せば閉じます。
+
+** ユーザの更新
+
+   下のような感じの S 式を評価すれば更新できます
+
+   #+BEGIN_SRC elisp
+     (cui-about:update "username" "password"
+                       '(("github" . "https://github.com/username")
+                         ("twitter" . "@username")))
+
+     ;;
+     ;; curl -X PUT -d 'password=password' \
+     ;;             -d 'github=https://github.com/username' \
+     ;;             -d 'twitter=@username' \
+     ;;             http://cui-about.me/username
+   #+END_SRC
+
+** ユーザの追加や削除
+
+   現在サポートしていません。
+
+** LICENSE
+
+   ~cui-about-me.el~ に記載
