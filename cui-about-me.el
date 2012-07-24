@@ -129,4 +129,4 @@
      (action . cui-about:show))))
 
 
-(provide 'cui-aboue-me)
+(provide 'cui-about-me)
